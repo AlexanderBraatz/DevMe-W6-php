@@ -36,7 +36,13 @@ class Address
     
     public function fullAddress()
     {
-        return "{$this->street}, {$this->town}, {$this->postcode}";
+        //return "{$this->street}, {$this->town}, {$this->postcode}";
+        return implode(", ", 
+        [
+            $this->street,
+            $this->town,
+            $this->postcode
+        ]);
     }
     
 }

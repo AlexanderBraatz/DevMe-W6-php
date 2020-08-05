@@ -24,15 +24,14 @@ class Stringy
         return strtoupper($this->string);
     }
 
-    public function append($str)
+    public function append($append)
     {
-        return "{$this->string}{$str}";
+        return "{$this->string}{$append}";
     }
 
     public function repeat($times)
     {
-      return str_repeat("{$this->string}", $times);
-        
+        return str_repeat("{$this->string}", $times);
     }
 }
 

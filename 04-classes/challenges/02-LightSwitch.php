@@ -7,10 +7,10 @@ class LightSwitch
 {
     private $state = false;
 
-    public function __contruct($initialState)
-    {
-        $this->state = $initialState;
-    }
+    // public function __contruct($initialState)
+    // {
+    //     $this->state = $initialState;
+    // }
 
     public function isOn()
     {
