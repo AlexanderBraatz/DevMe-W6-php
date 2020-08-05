@@ -47,3 +47,31 @@ dump($potato->hasGrown()); // true
 
 $potato->water()->water();
 dump($potato->hasGrown()); // true
+
+
+// $potato = new Potato();
+
+// dump($potato->hasGrown());
+
+// $potato->water()->water();
+
+// dump($potato->hasGrown());
+
+
+
+
+//Create a class Book in the App\Library namespace. It should take a title and its number of pages in the constructor. It should have a read() method, which takes a number of pages that have been read. It should also have a currentPage() page method which tells you which page you're currently on.
+
+echo "\nQuestion 4:\n";
+
+use App\Library\Book;
+
+$book = new Book("Zero: The Biography of a Dangerous Idea", 256);
+
+// read 12 pages
+$book->read(12);
+dump($book->currentPage()); // 13 - start on page 1
+
+// read another 25 pages
+$book->read(25);
+dump($book->currentPage()); // 38
