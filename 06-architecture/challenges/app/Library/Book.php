@@ -26,4 +26,9 @@ class Book
         return $this->bookmark;
     }
 
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
 }
