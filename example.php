@@ -10,7 +10,8 @@ class Classname // 1st-Capitalised
 {
     private $a;
     private $b;
-    private $c = _value_; //
+
+    private $c = _value_; // $this->c is given a *default* value
 
     public function __construct($_b_)
     {
