@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 require __DIR__ . "/vendor/autoload.php";
 
 
@@ -11,7 +12,7 @@ class Car
     private $numberplate;
     private $mileage = 0;
 
-    public function __construct($make, $numberplate)
+    public function __construct(string $make, string $numberplate)
     {
         $this->make =$make;
         $this->numberplate = $numberplate;
@@ -19,22 +20,22 @@ class Car
 
     }
     
-    public function getNumberplate()
+    public function getNumberplate() : string
     {
         return $this->numberplate;
     }
 
-    public function getMake()
+    public function getMake() :string
     {
         return $this->make;
     }
 
-    public function getMileage()
+    public function getMileage() : float
     {
         return $this->mileage;
     }
 
-    public function addJourney($miles)
+    public function addJourney(float $miles) : Car
     {
         $this->mileage += $miles;
         return $this;

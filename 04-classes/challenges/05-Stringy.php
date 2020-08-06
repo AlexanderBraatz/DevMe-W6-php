@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 require __DIR__ . "/vendor/autoload.php";
 
 // Create a class that lets you do things with a string.
@@ -10,26 +10,26 @@ class Stringy
 {
     private $string;
 
-    public function __construct($string){
+    public function __construct(string $string){
         $this->string = $string;
     }
 
-    public function lower()
+    public function lower() :string
     { 
         return strtolower($this->string);
     }
 
-    public function upper()
+    public function upper() :string
     {
         return strtoupper($this->string);
     }
 
-    public function append($append)
+    public function append(string $append) :string
     {
         return "{$this->string}{$append}";
     }
 
-    public function repeat($times)
+    public function repeat($times) :string
     {
         return str_repeat("{$this->string}", $times);
     }

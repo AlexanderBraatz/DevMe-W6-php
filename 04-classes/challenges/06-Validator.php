@@ -7,16 +7,18 @@ require __DIR__ . "/vendor/autoload.php";
 class Validator 
 {
     //should have used PHP var..? email validation see lecture
-    private $emailRegEx = "/^[a-zA-Z+0-9]+@[a-zA-Z+0-9]+\.[a-zA-Z+0-9]+$/";
+    //private $emailRegEx = "/^[a-zA-Z+0-9]+@[a-zA-Z+0-9]+\.[a-zA-Z+0-9]+$/";
     private $postcodeRegEx = "/^[A-Z][A-Z0-9]{2,3} \d[A-Z]{2}$/";
 
     
-    public function email($email)
+    public function email(string $email) :bool
     {
-        return preg_match($this->emailRegEx, $email) === 1;
+        //return preg_match($this->emailRegEx, $email) === 1;
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+        
     }
     
-    public function postcode($postcode)
+    public function postcode(string $postcode) :bool
     {
         return preg_match($this->postcodeRegEx, $postcode) === 1;
     }

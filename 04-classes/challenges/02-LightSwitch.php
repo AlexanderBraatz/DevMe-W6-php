@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 //Create a class that represents a light switch
 
 require __DIR__ . "/vendor/autoload.php";
@@ -12,19 +13,21 @@ class LightSwitch
     //     $this->state = $initialState;
     // }
 
-    public function isOn()
+    public function isOn() : bool
     {
         return $this->state;
     }
 
-    public function turnOn()
+    public function turnOn() : LightSwitch
     {
          $this->state = true;
+         return $this;
     }
 
-    public function turnOff()
+    public function turnOff() : LightSwitch
     {
         $this->state = false;
+        return $this;
     }
 
 }

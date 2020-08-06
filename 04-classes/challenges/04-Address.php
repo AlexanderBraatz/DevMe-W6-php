@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 require __DIR__ . "/vendor/autoload.php";
 
 // Create a class that represents an address - use different properties for each part of the address. It should have a fullAddress method, which will return the full address as a nicely formatted string.
@@ -12,32 +12,32 @@ class Address
     private $postcode;
     private $town;
 
-    public function __construct($street, $postcode, $town)
+    public function __construct(string $street, string $postcode, string $town)
     {
         $this->street = $street;
         $this->postcode = $postcode;
         $this->town = $town;
     }
 
-    public function setStreet($street)
+    public function setStreet(string $street) : address
     {
         $this->street = $street;
         return $this;
     }
 
-    public function setPostcode($postcode)
+    public function setPostcode(string $postcode) : address
     {
         $this->postcode = $postcode;
         return $this;
     }
     
-    public function setTown($town)
+    public function setTown(string $town) : address
     {
         $this->town = $town;
         return $this;
     }
     
-    public function fullAddress()
+    public function fullAddress() : string
     {
         //return "{$this->street}, {$this->town}, {$this->postcode}";
         return implode(", ", 
