@@ -7,36 +7,36 @@ class StringyRedux
 {
     private $s;
 
-    public function __construct($string)
+    public function __construct(string $string)
     {
         $this->s = $string;
     }
 
-    public function lower()
+    public function lower() : StringyRedux
     {
         $this->s = strtolower($this->s);
         return $this;
     }
 
-    public function repeat($times)
+    public function repeat(int $times) : StringyRedux
     {
         $this->s = str_repeat("{$this->s}", $times);
         return $this;
     }
     
-    public function upper()
+    public function upper() : StringyRedux
     {
         $this->s = strtoupper($this->s);
         return $this;
     }
     
-    public function append($append)
+    public function append(string $append) : StringyRedux
     {
         $this->s = "{$this->s}{$append}";
         return $this;
     }
     
-    public function get()
+    public function get() : string
     {
         return $this->s;
     }

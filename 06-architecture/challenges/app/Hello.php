@@ -4,7 +4,7 @@ namespace App;
 
 class Hello
 {
-    public function hello($str)
+    public function hello(string $str) : string
     {
         return "Hello {$str}" ;
     }

@@ -9,13 +9,13 @@ class Basket
 {
     private $contents = [];
 
-    public function add($BasketItem)
+    public function add(BasketItem $BasketItem) : Basket
     {
         $this->contents[] = $BasketItem;
         return $this;
     }
 
-    public function total()
+    public function total() : string
     { 
         $prices = collect($this->contents)->reduce(fn($sum, $BasketItem) => $sum + $BasketItem->getPrice(), 0);
         if(preg_match("/\.\d$/","{$prices}") === 1){
@@ -27,7 +27,7 @@ class Basket
         return "£{$prices}";
     }
 
-    public function items()
+    public function items() : array
     {
        $receipt = collect($this->contents)->map(fn($BasketItem) => $BasketItem->getItem())->all();
        return $receipt;
@@ -39,18 +39,18 @@ class BasketItem
     private $item;
     private $price;
 
-    public function __construct($item, $price)
+    public function __construct(string $item, float $price)
     {
         $this->item  = $item;   
         $this->price = $price;
     }
 
-    public function getItem()
+    public function getItem() : string
     {
         return $this->item;
     }        
 
-    public function getPrice()
+    public function getPrice() : float
     {
         return $this->price;
     }    

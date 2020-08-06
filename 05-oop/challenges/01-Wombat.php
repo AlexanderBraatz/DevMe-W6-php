@@ -8,29 +8,29 @@ class Wombat
     // Default value
     private $hugCount = 0;
 
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
 
 
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function sayHelloTo($wombat)
+    public function sayHelloTo(Wombat $wombat) : string
     {
         return "Hello {$wombat->name}";
     }
 
-    public function giveHug()
+    public function giveHug() : Wombat
     {
         $this->hugCount += 1;
         return $this;
     }
 
-    public function howManyHugs()
+    public function howManyHugs() : int
     {
         return $this->hugCount;
     }
